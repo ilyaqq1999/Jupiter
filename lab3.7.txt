@@ -1,0 +1,15 @@
+# 3.7
+a = [-2,-4,1,51,3,88,6,9,95,5,-8,101]
+# for i in enumerate(a):
+#     print(i)
+
+indexpos=a.index(next(filter(lambda i: i > 0, a)))
+indexneg=a.index(next(filter(lambda i: i < 0, a[::-1])))
+print(a)
+print("index first >0:",indexpos)
+print("index last <0:",indexneg)
+b = a[indexpos+1:indexneg]
+b.sort()
+print(b)
+a[indexpos+1:indexneg]=b
+print(a)
