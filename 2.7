@@ -1,0 +1,27 @@
+# 2.7
+s = 'Тире-слово !Разве ? Собака , кошка ,попугай . Предложение ; точка с запятой ? \
+    Обобщающее слово : слово1 , слово2 , слово3 ( привет ) , -дальше.. . [1 ] , выборка{ aqadaf }'
+first = [".","?","!",",",";",":","...",")","]","}"]
+second = ["(","[","{"]
+lists = list(s)
+print(lists)
+
+for i in lists:
+    if i =="-":
+        lists[s.index(i)] = " " + i + " "
+    # if i =='...':
+    #     print(i)
+    if i in first and lists[s.index(i)-1]==" ":
+        lists[s.index(i)-1] = ""
+        # print(i)
+    if i in first and len(s)>s.index(i)+1 and lists[s.index(i)+1]!=" ":
+        lists[s.index(i)] = i + " "
+    # elif i in first and lists[s.index(i)-1] == " ":
+    #     # print(i)
+    #     lists[s.index(i)] =""
+    #     lists[s.index(i)] = i + " "
+print(lists)
+# for i in lists:
+#     if i in second:
+#         lists[s.index(i)] = " " + i
+print(''.join(lists))
